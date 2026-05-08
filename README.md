@@ -1,15 +1,20 @@
 # OpenAPI Collection Generator - Postman
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Java 17](https://img.shields.io/badge/Java-17%2B-blue.svg)](https://openjdk.org/)
+[![Postman v2.1.0](https://img.shields.io/badge/Postman-v2.1.0-orange.svg)](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
 Postman collection generator plugin for the [openapi-collection-generator](https://github.com/rspereiratech) project. It converts an OpenAPI 3 specification into a ready-to-import **Postman Collection v2.1.0**, plus one Postman **environment** file per declared server.
 
 ## Features
 
 - Generates Postman Collection v2.1.0 JSON from any OpenAPI 3 specification.
-- Groups requests into folders by OpenAPI **tag**.
+- Groups requests into folders by OpenAPI **tag** (untagged operations go to `default`, callbacks to `Callbacks`).
 - Builds full request models: URL, path/query parameters, headers, and JSON request bodies.
 - Resolves server URLs and emits one Postman **environment** file per server.
-- Applies global security schemes as collection/environment variables (with secret placeholders).
-- Marks deprecated operations.
+- Applies global security schemes as collection/environment variables with secret placeholders.
+- Marks deprecated operations with a `[DEPRECATED]` prefix and a warning in the description.
+- Enriches descriptions with OpenAPI response **links** and processes `x-*` vendor extensions.
 - Pluggable architecture: implements the `CollectionGenerator` SPI from `openapi-collection-generator-core`.
 
 ## Requirements
@@ -65,7 +70,7 @@ src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/
 ├── generator/    # PostmanCollectionGenerator entry point
 ├── grouper/      # Tag-based operation grouping
 ├── header/       # Header builders
-├── model/        # Postman v2.1.0 data model (POJOs)
+├── model/        # Postman v2.1.0 data model (records)
 └── url/          # URL builders (path + query params)
 ```
 
@@ -74,6 +79,27 @@ src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/
 - **Collection**: Postman Collection v2.1.0 JSON, ready to import via *File → Import* in Postman.
 - **Environment(s)**: one per server, with `baseUrl` plus any required security variables (API keys, tokens, etc.) as secret placeholders.
 
+See [docs/output.md](docs/output.md) for sample JSON and import instructions.
+
+## Documentation
+
+Full documentation lives in [`docs/`](docs/):
+
+- [Architecture](docs/architecture.md) — how the plugin is structured.
+- [Generation Pipeline](docs/generation-pipeline.md) — step-by-step description of the conversion.
+- [Configuration](docs/configuration.md) — config options and OpenAPI → Postman mapping.
+- [Data Model](docs/data-model.md) — the Postman v2.1.0 records used internally.
+- [Extension Points](docs/extension-points.md) — how to customize behavior.
+- [Output](docs/output.md) — sample JSON, file naming, and import steps.
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a PR.
+
+## Security
+
+If you find a security issue, please follow the process in [SECURITY.md](SECURITY.md) — do **not** open a public issue.
+
 ## License
 
-See the parent project for licensing information.
+This project is licensed under the [MIT License](LICENSE).
