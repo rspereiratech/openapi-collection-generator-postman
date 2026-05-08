@@ -1,12 +1,12 @@
 # OpenAPI Collection Generator - Postman
 
-[![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
-![Java](https://img.shields.io/badge/java-17%2B-blue)
-![Maven](https://img.shields.io/badge/maven-✓-C71A36?logo=apachemaven&logoColor=white)
-![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-6BA539?logo=openapiinitiative&logoColor=white)
-![Swagger](https://img.shields.io/badge/swagger--parser-v3-85EA2D?logo=swagger&logoColor=black)
-![Postman](https://img.shields.io/badge/Postman-v2.1.0-FF6C37?logo=postman&logoColor=white)
-![Status](https://img.shields.io/badge/status-snapshot-orange)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+![Java 17+](https://img.shields.io/badge/Java-17%2B-blue)
+![Maven 3.9+](https://img.shields.io/badge/Maven-3.9%2B-C71A36?logo=apachemaven&logoColor=white)
+![OpenAPI 3.0](https://img.shields.io/badge/OpenAPI-3.0-6BA539?logo=openapiinitiative&logoColor=white)
+![Swagger v3](https://img.shields.io/badge/Swagger-v3-85EA2D?logo=swagger&logoColor=black)
+![Postman v2.1.0](https://img.shields.io/badge/Postman-v2.1.0-FF6C37?logo=postman&logoColor=white)
+![Status: Snapshot](https://img.shields.io/badge/Status-Snapshot-orange)
 
 Postman collection generator plugin for the [openapi-collection-generator](https://github.com/rspereiratech) project. It converts an OpenAPI 3 specification into a ready-to-import **Postman Collection v2.1.0**, plus one Postman **environment** file per declared server.
 
