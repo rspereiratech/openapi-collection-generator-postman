@@ -9,12 +9,24 @@
         <groupId>com.github.rspereiratech</groupId>
         <artifactId>openapi-collection-generator-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath/>
     </parent>
 
     <artifactId>openapi-collection-generator-postman</artifactId>
     <name>OpenAPI Collection Generator - Postman</name>
     <description>Postman collection generator plugin for OpenAPI specifications</description>
+    <url>https://github.com/rspereiratech/openapi-collection-generator-postman</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/rspereiratech/openapi-collection-generator-postman.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/rspereiratech/openapi-collection-generator-postman.git</developerConnection>
+        <url>https://github.com/rspereiratech/openapi-collection-generator-postman</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/rspereiratech/openapi-collection-generator-postman/issues</url>
+    </issueManagement>
 
     <dependencies>
         <dependency>
@@ -24,10 +36,6 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
