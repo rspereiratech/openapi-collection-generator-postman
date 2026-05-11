@@ -1,0 +1,92 @@
+name: Bug report
+description: Report a defect in the Postman collection generator
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report! Please fill in the
+        sections below so the issue can be reproduced and triaged quickly.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: A clear and concise description of the bug.
+      placeholder: When generating a collection from spec X, the output Y is wrong because Z.
+    validations:
+      required: true
+
+  - type: textarea
+    id: openapi-input
+    attributes:
+      label: OpenAPI input
+      description: |
+        The OpenAPI specification that triggers the bug, ideally a minimal
+        reduction. Paste it inline as YAML/JSON, or link to a gist.
+      render: yaml
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-output
+    attributes:
+      label: Generated Postman output
+      description: The Postman collection JSON that was produced (or the relevant excerpt).
+      render: json
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to see in the generated collection?
+    validations:
+      required: true
+
+  - type: input
+    id: postman-version
+    attributes:
+      label: Postman version
+      description: Version of Postman you tried to import the collection into.
+      placeholder: "e.g. 11.x"
+    validations:
+      required: false
+
+  - type: input
+    id: module-version
+    attributes:
+      label: Module version / commit
+      description: Version of `openapi-collection-generator-postman` (or commit hash if built from source).
+      placeholder: "1.0.0-SNAPSHOT @ abcdef0"
+    validations:
+      required: true
+
+  - type: input
+    id: java-version
+    attributes:
+      label: Java version
+      placeholder: "e.g. 17.0.12 (Temurin)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / stack trace
+      description: Any relevant log output or stack trace.
+      render: shell
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: pre-flight
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: I have searched existing issues and could not find a duplicate.
+          required: true
+        - label: My report follows the [Code of Conduct](../CODE_OF_CONDUCT.md).
+          required: true
