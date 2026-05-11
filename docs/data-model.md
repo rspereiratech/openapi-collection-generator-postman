@@ -1,6 +1,6 @@
 # Data Model
 
-All Postman model types live in the [`model/`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/model) package and are immutable Java `record`s. They mirror the [Postman Collection v2.1.0](https://schema.getpostman.com/json/collection/v2.1.0/collection.json) schema closely enough for direct serialization via Jackson.
+All Postman model types live in the [`model/`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/model) package and are immutable Java `record`s. They mirror the [Postman Collection v2.1.0](https://schema.getpostman.com/json/collection/v2.1.0/collection.json) schema closely enough for direct serialization via Jackson.
 
 ## Tree
 

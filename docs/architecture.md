@@ -30,7 +30,7 @@ The generator returns:
 
 | Package        | Responsibility                                                                 |
 | -------------- | ------------------------------------------------------------------------------ |
-| `generator/`   | Top-level orchestration ([`PostmanCollectionGenerator`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/generator/PostmanCollectionGenerator.java)). |
+| `generator/`   | Top-level orchestration ([`PostmanCollectionGenerator`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/generator/PostmanCollectionGenerator.java)). |
 | `grouper/`     | Groups operations into folders by tag (or `Callbacks`).                        |
 | `builder/`     | Assembles a `PostmanItem` for a single operation.                              |
 | `url/`         | Builds the request URL (path segments + query params + security injection).    |

@@ -8,11 +8,11 @@ These live inside this module and are wired into `PostmanCollectionGenerator`.
 
 | Interface                                                                                                                              | Default impl                | When to override                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ---------------------------------------------------------------------- |
-| [`OperationGrouper`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/grouper/OperationGrouper.java)     | `TagOperationGrouper`       | Group operations by something other than the first tag (e.g. by path prefix, by version). |
-| [`ItemBuilder`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/builder/ItemBuilder.java)               | `PostmanItemBuilder`        | Customize naming, description, or assembly of a single request item.   |
-| [`UrlBuilder`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/url/UrlBuilder.java)                     | `PostmanUrlBuilder`         | Change how URLs/path-variable syntax/query params are emitted.         |
-| [`HeaderBuilder`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/header/HeaderBuilder.java)            | `PostmanHeaderBuilder`      | Add fixed headers, drop ones, or change `Content-Type` resolution.     |
-| [`BodyBuilder`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/body/BodyBuilder.java)                  | `PostmanBodyBuilder`        | Emit non-JSON bodies, switch from `raw` to `formdata`/`urlencoded`, etc. |
+| [`OperationGrouper`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/grouper/OperationGrouper.java)     | `TagOperationGrouper`       | Group operations by something other than the first tag (e.g. by path prefix, by version). |
+| [`ItemBuilder`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/builder/ItemBuilder.java)               | `PostmanItemBuilder`        | Customize naming, description, or assembly of a single request item.   |
+| [`UrlBuilder`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/url/UrlBuilder.java)                     | `PostmanUrlBuilder`         | Change how URLs/path-variable syntax/query params are emitted.         |
+| [`HeaderBuilder`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/header/HeaderBuilder.java)            | `PostmanHeaderBuilder`      | Add fixed headers, drop ones, or change `Content-Type` resolution.     |
+| [`BodyBuilder`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/body/BodyBuilder.java)                  | `PostmanBodyBuilder`        | Emit non-JSON bodies, switch from `raw` to `formdata`/`urlencoded`, etc. |
 
 ### Example: replace the grouper
 
