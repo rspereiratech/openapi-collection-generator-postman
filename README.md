@@ -1,12 +1,13 @@
 # OpenAPI Collection Generator - Postman
 
+[![Build](https://github.com/rspereiratech/openapi-collection-generator-postman/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/rspereiratech/openapi-collection-generator-postman/actions/workflows/build.yml)
+[![CodeQL](https://github.com/rspereiratech/openapi-collection-generator-postman/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/rspereiratech/openapi-collection-generator-postman/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 ![Java 17+](https://img.shields.io/badge/Java-17%2B-blue)
 ![Maven 3.9+](https://img.shields.io/badge/Maven-3.9%2B-C71A36?logo=apachemaven&logoColor=white)
 ![OpenAPI 3.0](https://img.shields.io/badge/OpenAPI-3.0-6BA539?logo=openapiinitiative&logoColor=white)
 ![Swagger Parser v3](https://img.shields.io/badge/Swagger%20Parser-v3-85EA2D?logo=swagger&logoColor=black)
 ![Postman v2.1.0](https://img.shields.io/badge/Postman-v2.1.0-FF6C37?logo=postman&logoColor=white)
-![Status: Snapshot](https://img.shields.io/badge/Status-Snapshot-orange)
 [![Donate](https://img.shields.io/badge/Donate-NOWPayments-1A1A1A?logo=bitcoin&logoColor=white)](https://nowpayments.io/donation/rspereiratech)
 
 Postman collection generator plugin for the [openapi-collection-generator](https://github.com/rspereiratech) project. It converts an OpenAPI 3 specification into a ready-to-import **Postman Collection v2.1.0**, plus one Postman **environment** file per declared server.
