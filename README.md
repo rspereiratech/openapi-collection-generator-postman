@@ -7,6 +7,7 @@
 ![Swagger Parser v3](https://img.shields.io/badge/Swagger%20Parser-v3-85EA2D?logo=swagger&logoColor=black)
 ![Postman v2.1.0](https://img.shields.io/badge/Postman-v2.1.0-FF6C37?logo=postman&logoColor=white)
 ![Status: Snapshot](https://img.shields.io/badge/Status-Snapshot-orange)
+[![Donate](https://img.shields.io/badge/Donate-NOWPayments-1A1A1A?logo=bitcoin&logoColor=white)](https://nowpayments.io/donation/rspereiratech)
 
 Postman collection generator plugin for the [openapi-collection-generator](https://github.com/rspereiratech) project. It converts an OpenAPI 3 specification into a ready-to-import **Postman Collection v2.1.0**, plus one Postman **environment** file per declared server.
 
@@ -103,6 +104,14 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before
 ## Security
 
 If you find a security issue, please follow the process in [SECURITY.md](SECURITY.md) — do **not** open a public issue.
+
+## Support
+
+[![Donate](https://img.shields.io/badge/Donate-NOWPayments-1A1A1A?logo=bitcoin&logoColor=white)](https://nowpayments.io/donation/rspereiratech)
+
+If this project saves you time, consider supporting development
+via [NOWPayments](https://nowpayments.io/donation/rspereiratech).
+Every contribution helps keep it maintained — thank you!
 
 ## License
 
