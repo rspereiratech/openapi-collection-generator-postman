@@ -10,6 +10,7 @@ This folder contains the technical documentation for the **OpenAPI Collection Ge
 - [Data Model](data-model.md) — Postman v2.1.0 records used internally.
 - [Extension Points](extension-points.md) — interfaces you can implement to customize behavior.
 - [Output](output.md) — what the generator produces (collection + environments) and how to import it.
+- [Publishing](publishing.md) — SNAPSHOT/release publishing to Sonatype Central, required secrets.
 
 ## Quick links
 
