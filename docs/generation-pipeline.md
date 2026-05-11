@@ -1,6 +1,6 @@
 # Generation Pipeline
 
-This document walks through what happens when [`PostmanCollectionGenerator.generate`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/generator/PostmanCollectionGenerator.java) is invoked.
+This document walks through what happens when [`PostmanCollectionGenerator.generate`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/generator/PostmanCollectionGenerator.java) is invoked.
 
 ## 1. Resolve the collection name
 

@@ -41,7 +41,7 @@ This module is a **plugin** consumed by the core generator. Add it as a dependen
 
 ```xml
 <dependency>
-    <groupId>com.github.rspereiratech</groupId>
+    <groupId>io.github.rspereiratech</groupId>
     <artifactId>openapi-collection-generator-postman</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 </dependency>

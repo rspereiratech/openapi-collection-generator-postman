@@ -14,6 +14,6 @@ This folder contains the technical documentation for the **OpenAPI Collection Ge
 
 ## Quick links
 
-- Source root: [`src/main/java/com/github/rspereiratech/openapi/collection/generator/postman`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman)
-- Entry point: [`PostmanCollectionGenerator`](../src/main/java/com/github/rspereiratech/openapi/collection/generator/postman/generator/PostmanCollectionGenerator.java)
+- Source root: [`src/main/java/io/github/rspereiratech/openapi/collection/generator/postman`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman)
+- Entry point: [`PostmanCollectionGenerator`](../src/main/java/io/github/rspereiratech/openapi/collection/generator/postman/generator/PostmanCollectionGenerator.java)
 - Postman Collection schema: [v2.1.0](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
