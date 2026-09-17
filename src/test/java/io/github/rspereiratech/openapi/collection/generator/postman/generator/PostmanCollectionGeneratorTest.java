@@ -195,6 +195,34 @@ class PostmanCollectionGeneratorTest {
     }
 
     @Test
+    void generateAdditionalFiles_emitsKeysInStableOrder() throws Exception {
+        OpenAPI api = api("API", "d");
+        when(serverEnvGen.generate(any(), any())).thenReturn(List.of(
+                new ServerEnvironment("Prod", "http://prod", "prod.json")));
+        when(securityApplier.applyGlobal(any())).thenReturn(new SecurityInjection(
+                List.of(), List.of(),
+                List.of(new EnvironmentVariable("apiKey", "{{apiKey}}"))));
+
+        String content = generator.generateAdditionalFiles(api, config("X")).get(0).content();
+
+        // Top-level keys follow insertion order: name, values, _postman_variable_scope.
+        assertTrue(content.indexOf("\"name\"") < content.indexOf("\"values\""));
+        assertTrue(content.indexOf("\"values\"") < content.indexOf("_postman_variable_scope"));
+
+        // Each entry follows insertion order: key, value, enabled, type. Anchored on the
+        // apiKey entry so the assertion does not straddle two entries.
+        int entry = content.indexOf("\"apiKey\"");
+        assertTrue(entry > 0);
+        int key = content.lastIndexOf("\"key\"", entry);
+        int value = content.indexOf("\"value\"", entry);
+        int enabled = content.indexOf("\"enabled\"", entry);
+        int type = content.indexOf("\"type\"", entry);
+        assertTrue(key >= 0 && key < value);
+        assertTrue(value < enabled);
+        assertTrue(enabled < type);
+    }
+
+    @Test
     void generateAdditionalFiles_includesSecurityVariablesAsSecret() throws Exception {
         OpenAPI api = api("API", "d");
         when(serverEnvGen.generate(any(), any())).thenReturn(List.of(

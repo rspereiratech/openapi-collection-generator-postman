@@ -19,6 +19,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -104,19 +105,43 @@ public class PostmanCollectionGenerator implements CollectionGenerator {
             List<AdditionalFile> files = new ArrayList<>();
             for (var env : serverEnvGenerator.generate(openApi, name)) {
                 List<Map<String, Object>> values = new ArrayList<>();
-                values.add(Map.of("key", "baseUrl", "value", env.baseUrl(),
-                        "enabled", true, "type", "default"));
+                values.add(environmentValue("baseUrl", env.baseUrl(), "default"));
                 securityApplier.applyGlobal(openApi).variables().forEach(v ->
-                        values.add(Map.of("key", v.name(), "value", v.placeholder(),
-                                "enabled", true, "type", "secret")));
-                files.add(new AdditionalFile(env.fileName(), envMapper.writeValueAsString(
-                        Map.of("name", env.name(), "values", values,
-                                "_postman_variable_scope", "environment"))));
+                        values.add(environmentValue(v.name(), v.placeholder(), "secret")));
+
+                Map<String, Object> environment = new LinkedHashMap<>();
+                environment.put("name", env.name());
+                environment.put("values", values);
+                environment.put("_postman_variable_scope", "environment");
+
+                files.add(new AdditionalFile(env.fileName(),
+                        envMapper.writeValueAsString(environment)));
             }
             return files;
         } catch (Exception e) {
             throw new CollectionGenerationException("Postman environment generation failed", e);
         }
+    }
+
+    /**
+     * Builds a single Postman environment variable entry.
+     *
+     * <p>A {@link LinkedHashMap} is used rather than {@code Map.of}: the latter randomises
+     * its iteration order per JVM run, which made the generated environment files differ
+     * between builds of the same version.
+     *
+     * @param key   the variable name
+     * @param value the variable value
+     * @param type  the Postman variable type ({@code default} or {@code secret})
+     * @return an ordered map representing the environment entry
+     */
+    private static Map<String, Object> environmentValue(String key, String value, String type) {
+        Map<String, Object> entry = new LinkedHashMap<>();
+        entry.put("key", key);
+        entry.put("value", value);
+        entry.put("enabled", true);
+        entry.put("type", type);
+        return entry;
     }
 
     /**
